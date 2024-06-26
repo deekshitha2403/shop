@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card mb-3 col-10" style="max-width: 2000px;">
+    <div class="row g-0">
+        <div class="col-md-4 ">
+            <div class="col-sm-6"></div>
+            <img src="{{product.image.url}}" class="img-fluid rounded-start" alt="..."></a>
+        </div>
+        <div class="col-md-8 mb-5">
+            <div class="card-body">
+            <h2 class="card-title">{{product.name}}</h2></front>
+            <h5 class="card-text">Fresh</h5>
+            <h3 class="card-price"><b>Prize :</b> ₹ {{product.price}} 1kg</h3>
+            <a href="#" class="btn btn-warning w-50"><front size="5">Buy Now</a></front>
+            
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

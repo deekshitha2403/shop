@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center">
+    <div class="row">
+      {% for product in products %}
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+            <a href="/product-details/{{product.id}}/"><img src="{{product.image.url}}" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <h2 class="card-title">{{product.name}}</h2>
+              <h5>Fresh</h5>
+              <p class="card-text">{{product.discription}}</p>
+              <h3 class="card-text">Prize: ₹ {{product.price}} 1kg</h3><br>
+              <form action="/place-order/" method="post">
+                {% csrf_token %}
+                  <input type="hidden" name="product_id" value="{{product.id}}">
+                <!-- <a href="#" class="btn btn-warning w-50">Buy Now</a> -->
+                <input type="submit" class="btn btn-warning" value="Buy Now">
+                <a href="/product-update/{{product.id}}/" class="btn btn-success w-30">Update</a>
+              </form>
+            </div>
+          </div>
+      </div>
+      {% endfor %}
+</div>
+{% endblock %}
